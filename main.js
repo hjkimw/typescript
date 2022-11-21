@@ -1,11 +1,31 @@
-// 초기 세팅 명령어
-// 1.설치:  sudo npm i -g typescript
-// 2.버전확인: tsc -v
-// 3.설정파일 생성: tsc --init
-// 4.컴파일(ts로 변환할 js파일): tsc -w main.ts
-// 5.버전변경(es6): ts -w main.ts --target es6
-// 변수에 타입을 지정하지 않으면 any이며 Typescript에서는 any는 오류라고 인식한다.
-const add = (num1, num2) => {
-    console.log(num1 + num2);
-};
-add(2, 3);
+// 기본 타입 지정
+let text = "hello";
+let num = 3;
+let isFemale = true;
+let empty = null;
+let errors = undefined;
+// 배열 타입 지정
+let like = ["game", "music", "movie"];
+let dislike = ["아무거나", "아무거나", "아무거나"];
+let odd = [1, 3, 5];
+let even = [2, 4, 6];
+// like.push(3); <= 타입이 다르기에 오류가발생한다.
+// 튜플 타입 지정
+let arr1 = ["test", 2];
+// arr1[0].toUpperCase(); index0인 문자열 요소에는 해당 메서드를 사용할 수 있지만 index1인 요소에는 문자열이 아니기에 오류가 발생한다.
+// 함수의 리턴값 타입지정
+// 리턴하는 값이 없음
+function noReturn() {
+    console.log("hello");
+}
+// 해당 함수가 리턴하는 자료형을 타입을 적용해줌
+function returnNumber() {
+    return 5;
+}
+//에러 객체를 반환하거나 무한루프 함수에서는 리턴값을 never로 지정
+function returnErr() {
+    throw new Error();
+}
+function infinit() {
+    while (true) { }
+}
